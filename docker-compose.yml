@@ -1,0 +1,10 @@
+services:
+  cloudflare-webhook:
+    build: ./cloudflare-webhook
+    container_name: cloudflare-webhook
+    environment:
+      - CLOUDFLARE_API_TOKEN=seu_api_token_aqui
+      - CLOUDFLARE_ZONE_ID=sua_zone_id_aqui
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
